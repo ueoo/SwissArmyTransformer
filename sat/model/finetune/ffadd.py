@@ -5,6 +5,7 @@
 # @Contact :   yangzhuo18@mails.tsinghua.edu.cn
 from sat.model.base_model import BaseMixin, non_conflict
 import torch
+import torch.nn as nn
 class FFADDMixin(BaseMixin):
     def __init__(
             self,

@@ -187,7 +187,7 @@ class ChatModel(nn.Module, GenerationMixin):
         response = self.process_response(response)
         history = history + [(query, response)]
         return response, history
-    
+
     @torch.no_grad()
     def batch_generate(self, tokenizer, queries, max_length: int = 2048, num_beams=1,
              do_sample=True, top_p=0.7, temperature=0.95, **kwargs):

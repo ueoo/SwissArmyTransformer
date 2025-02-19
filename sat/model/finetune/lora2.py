@@ -122,7 +122,7 @@ class LoraLinear(nn.Module):
         else:
             # load from LoraLinear
             super()._load_from_state_dict(state_dict, prefix, local_metadata, strict, missing_keys, unexpected_keys, error_msgs)
-            
+
     def forward(self, x):
         mixed_raw_layer = self.original(x)
         x = self.lora_dropout(x)
@@ -172,7 +172,7 @@ def merge_linear_lora(lin):
     return new_lin.cuda() if torch.cuda.is_available() else new_lin
 
 class LoraMixin(BaseMixin):
-    def __init__(self, 
+    def __init__(self,
                 layer_num,
                 r: int = 0,
                 lora_alpha: int = 1,
